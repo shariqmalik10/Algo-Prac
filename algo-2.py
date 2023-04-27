@@ -10,7 +10,12 @@ Ex: Given the following strings...
 '''
 def is_plaindrome(string):
     '''
-    Complexity: 
+    Complexity: O(n^2)
+    Removed all characters aside from alphabets and converted all to lower case
     '''
-    #using negative indexing and getting the string in backwards order by assigning a negative stride (or step) value 
-    return string == string[::-1]
+    new_str = ""
+    #using negative indexing and getting the string in backwards order by assigning a negative stride (or step) value
+    for i in string:
+        if i.isalpha():
+            new_str+=i
+    return new_str.lower() == new_str.lower()[::-1]
